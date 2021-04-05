@@ -27,20 +27,22 @@ d_c=((t*bhn^0.25*(rho_t/rho_p)^0.5)/...
     (k*5.24*(v*cosd(theta)/c_t)^2/3))^(18/19);
 
 %% Whipple (double Al)
-s= %overall spacing (cm)
-d= %projectile diameter (cm)
+s= 11;%overall spacing (cm)
+d= 1;%projectile diameter (cm)
 if s/d>=30
-    cb=0.2;
-else cb=0.25;
+    c_b=0.2;
+else
+    c_b=0.25;
 end
-cw=0.16
-sig= % rear wall yield stress
-rho_p= % projectille density (g/cm3)
-rho_b= % bumper density (g/cm3)
+c_w=0.16;
+sig= 0.145038*71;% rear wall yield stress
+rho_p= 2.8;% projectille density (g/cm3)
+rho_b= 2.74;% bumper density (g/cm3)
+v_n=7;
 % t_b=c_b*m_p/rho_b;
+M_p=4/3*(d/2)^3*pi*rho_p;
 
-
-% Bumper thickness
-t_b=c_b*d*rho_p/rho_b;
-% Rear wall thickness
-t_w=c_w*d^0.5*(rho_p*rho_b)^1(/6)*(M_p)^(1/3)*v_n/s^0.5*(70/sig)^0.5
+% Bumper thickness(cm)
+t_b=c_b*d*rho_p/rho_b; 
+% Rear wall thickness(cm)
+t_w=c_w*d^0.5*(rho_p*rho_b)^(1/6)*(M_p)^(1/3)*v_n/s^0.5*(70/sig)^0.5;
