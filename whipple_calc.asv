@@ -16,26 +16,25 @@ sig= 0.145038*390; % rear wall yield stress (ksi) 2219-T87
 c_nk=0.23; 
 m_kev=0.032; m_nex=0.1;
 
-%%%% Regular Whipple Shielding
-% d_crit=whip_crit(t_w,rho_b,rho_p,v_n,s,sig);
-% [t_b,t_w]=whip_sizing(rho_b,rho_p,v_n,s,sig,d);
+% d_crit=whipple_crit(t_w,rho_b,rho_p,v_n,s,sig);
+% [t_b,t_w]=whipple_sizing(rho_b,rho_p,v_n,s,sig,d);
 
 % Areal density and number of Nextel/Kevlar layers
 [m_nk,no_nex,no_kev]=nexkev_sizing(c_nk,d_design,rho_p,m_kev,m_nex);
 % m_nk=m_nk+m_kev;
 % Critical wall/bumper sizing for design projectile
-[t_b,t_w]=stuff_sizing(rho_w,rho_b,rho_p,v_n,s,sig,d_design,c_nk,theta)
+[t_b,t_w]=stuffed_sizing(rho_w,rho_b,rho_p,v_n,s,sig,d_design,c_nk,theta)
 
 %%%% Test data for t_w=0.48cm, t_wb.2cm, 6 Nex AF62 + 6 Kev 710, S=10.7cm
 %%%% d_crit=swhipple_crit(.48,.2,2.84,2.713,2.796,6,10.7,sig,theta,0.796)
 
 % Critical projectile diameter for design wall/bumper
 % d_crit=swhipple_crit(t_w,t_b,rho_w,rho_b,rho_p,2,s,sig,theta,m_nk)
+% 
 % d_crit=swhipple_crit(0.25,0.1,rho_w,rho_b,rho_p,2,s,sig,theta,m_nk)
-
 vv=1:.1:15;
 for i=1:length(vv)
-    dd(i)=stuff_crit(0.24,0.05,rho_w,rho_b,rho_p,vv(i),s,sig,theta,m_nk);
+    dd(i)=swhipple_crit(0.24,0.05,rho_w,rho_b,rho_p,vv(i),s,sig,theta,m_nk);
 end
 plot(vv,dd)
 ylim([0,2])
@@ -79,7 +78,7 @@ M_p=4/3.*(d/2).^3*pi*rho_p;
 t_b=c_b.*d*rho_p/rho_b;
 t_w=c_w*(c_o*d*rho_p/(t_b*rho_p+m_nk))^1.1*M_p^(1/3)*v_n*cosd(theta)^0.5*1/rho_w*s^-2*(sig/40)^(-.5);
 end
-function d_crit=stuff_crit(t_w,t_b,rho_w,rho_b,rho_p,v_n,s,sig,theta,m_nk)
+function d_crit=swhipple_crit(t_w,t_b,rho_w,rho_b,rho_p,v_n,s,sig,theta,m_nk)
 m_b=rho_b*t_b; m_w=rho_w*t_w;
 m_shield=m_b+m_nk+m_w;
 m_b_total=m_b+m_nk;
