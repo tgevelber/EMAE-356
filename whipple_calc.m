@@ -1,10 +1,23 @@
+%{ 
+    How to use whipple_calc.m
+    1) Edit your design projectile parameters
+    2) Edit your Wall/Bumper spacing and material (density/rear wall yield stress)
+    3) Edit your Nextel and Kevlar material (data provided in script)
+    4) Profit
+    This script can spit out:
+    - Number of Nextel/Kevlar layers, rounded up for redundency
+    - Wall and bumper thickness in cm
+    - Critical projectile diameter in cm (vs velocity)
+%}
+
 % Projectile parameters
-theta=0;%impact angle (degree)
+theta=0; % impact angle (degree)
 d_design=.3; % Design projectile diameter (cm)
 rho_p= 2.8; % projectille density (g/cm3)
 v=22; % projectile velocity (km/s)
-v_n=v*cos(theta); % projectile velocity normal to bumper(km/s)
+v_n=v*cosd(theta); % projectile velocity normal to bumper(km/s)
 
+% Wall/Bumper parameters
 s=15; %overall spacing (cm)
 rho_b= 2.71; % bumper density (g/cm3) Al-6061-T6
 rho_w=2.84; % rear wall density (g/cm3) Al-2219-T87
@@ -13,7 +26,7 @@ sig= 0.145038*390; % rear wall yield stress (ksi) 2219-T87
 % Stuffing parameters
 %%% Nextel: 0.1 (AF62), 0.027 (AF10)
 %%% Kevlar: 0.023 (KM2-705), 0.032 (22-FDI129 aka 710)
-c_nk=0.23; 
+c_nk=0.23; % CONSTANT, DO NOT CHANGE
 m_kev=0.032; m_nex=0.1;
 
 %%%% Regular Whipple Shielding
@@ -27,15 +40,17 @@ m_kev=0.032; m_nex=0.1;
 [t_b,t_w]=stuff_sizing(rho_w,rho_b,rho_p,v_n,s,sig,d_design,c_nk,theta)
 
 %%%% Test data for t_w=0.48cm, t_wb.2cm, 6 Nex AF62 + 6 Kev 710, S=10.7cm
-%%%% d_crit=swhipple_crit(.48,.2,2.84,2.713,2.796,6,10.7,sig,theta,0.796)
+%%%% d_crit=stuff_crit(.48,.2,2.84,2.713,2.796,6,10.7,sig,theta,0.796)
 
 % Critical projectile diameter for design wall/bumper
-% d_crit=swhipple_crit(t_w,t_b,rho_w,rho_b,rho_p,2,s,sig,theta,m_nk)
-% d_crit=swhipple_crit(0.25,0.1,rho_w,rho_b,rho_p,2,s,sig,theta,m_nk)
+% d_crit=stuff_crit(t_w,t_b,rho_w,rho_b,rho_p,2,s,sig,theta,m_nk)
+% d_crit=stuff_crit(0.25,0.1,rho_w,rho_b,rho_p,2,s,sig,theta,m_nk)
 
 vv=1:.1:15;
 for i=1:length(vv)
     dd(i)=stuff_crit(0.24,0.05,rho_w,rho_b,rho_p,vv(i),s,sig,theta,m_nk);
+%     dd(i)=stuff_crit(.48,.2,2.84,2.713,2.796,vv(i),10.7,sig,theta,0.796);
+%     dd(i)=stuff_crit(0.25,0.1,rho_w,rho_b,rho_p,2,s,sig,theta,m_nk)
 end
 plot(vv,dd)
 ylim([0,2])
