@@ -1,0 +1,130 @@
+4/12/2021 2:30:28 PM  (ORDEM 3.1) - New Log Started
+
+4/12/2021 2:30:28 PM  (ORDEM 3.1) - Project Path = D:\Work\Matlab Scripts\EMAE 356\EMAE-356\ORDEM projects
+
+4/12/2021 2:30:28 PM  (ORDEM 3.1) - New project started, values have been loaded.
+  Project Values: 
+     Spacecraft Observation Year: 2042
+     Spacecraft Use Axis Orbit Type: false
+     Spacecraft Perigee (km): 400
+     Spacecraft Apogee (km): 400
+     Spacecraft Semi-Major Axis (km): 6778.135
+     Spacecraft Eccentricity (0-1): 0
+     Spacecraft Inclination (deg): 51.6
+     Spacecraft Use Random ArgOfPerigee: True  (Ignore next line)
+     Spacecraft Arg. Of Perigee (deg): 0
+     Spacecraft Use Random RAAN: True  (Ignore next line)
+     Spacecraft RAAN (deg): 0
+     Spacecraft Igloo File: IGLOO_10x10x1.SIG
+     Radar Observation Year: 2042
+     Radar Latitude (deg): 42.62
+     Radar Azimuth (deg): 90
+     Radar Elevation (deg): 75
+     Radar Igloo File: ALT_50.TIG
+
+
+4/12/2021 2:30:28 PM  (ORDEM 3.1) - Project opened 
+  Project Values: 
+     Spacecraft Observation Year: 2042
+     Spacecraft Use Axis Orbit Type: false
+     Spacecraft Perigee (km): 400
+     Spacecraft Apogee (km): 400
+     Spacecraft Semi-Major Axis (km): 6778.135
+     Spacecraft Eccentricity (0-1): 0
+     Spacecraft Inclination (deg): 51.6
+     Spacecraft Use Random ArgOfPerigee: True  (Ignore next line)
+     Spacecraft Arg. Of Perigee (deg): 0
+     Spacecraft Use Random RAAN: True  (Ignore next line)
+     Spacecraft RAAN (deg): 0
+     Spacecraft Igloo File: IGLOO_10x10x1.SIG
+     Radar Observation Year: 2042
+     Radar Latitude (deg): 42.62
+     Radar Azimuth (deg): 90
+     Radar Elevation (deg): 75
+     Radar Igloo File: ALT_50.TIG
+
+
+4/12/2021 2:31:36 PM  (ORDEM 3.1) - TLE Calculated
+  TLE Values
+     Tle Line 1: 1 25544U 98067A   15131.67602066  .00013920  00000-0  10020-3 0  1318
+     Tle Line 2: 2 25544 051.6458 057.9581 0009715 303.1784 127.1621 15.73868289657728
+     Year: 2015
+     Day of Year: 131.676
+     Decimal Year: 2015.361
+     Semi-major axis: 6725.738
+     Eccentricity: 0.0009715
+     Perigee: 341.068
+     Apogee: 354.137
+     Inclination: 51.646
+     RAAN: 57.958
+     Argument of Perigee: 303.178
+     Mean Anomaly: 127.162
+
+
+4/12/2021 2:32:08 PM  (ORDEM 3.1) - The Spacecraft Model started 
+  Project Values: 
+     Spacecraft Observation Year: 2042
+     Spacecraft Use Axis Orbit Type: false
+     Spacecraft Perigee (km): 400
+     Spacecraft Apogee (km): 400
+     Spacecraft Semi-Major Axis (km): 6778.135
+     Spacecraft Eccentricity (0-1): 0
+     Spacecraft Inclination (deg): 51.6
+     Spacecraft Use Random ArgOfPerigee: True  (Ignore next line)
+     Spacecraft Arg. Of Perigee (deg): 0
+     Spacecraft Use Random RAAN: True  (Ignore next line)
+     Spacecraft RAAN (deg): 0
+     Spacecraft Igloo File: IGLOO_10x10x1.SIG
+     Radar Observation Year: 2042
+     Radar Latitude (deg): 42.62
+     Radar Azimuth (deg): 90
+     Radar Elevation (deg): 75
+     Radar Igloo File: ALT_50.TIG
+
+
+4/12/2021 2:32:58 PM  (ORDEM 3.1) - Spacecraft Run Completed.  Return Code: 0
+
+4/12/2021 5:33:31 PM  (ORDEM 3.1) - Application Started
+
+4/12/2021 7:45:56 PM  (ORDEM 3.1) - Project opened 
+  Project Values: 
+     Spacecraft Observation Year: 2042
+     Spacecraft Use Axis Orbit Type: false
+     Spacecraft Perigee (km): 400
+     Spacecraft Apogee (km): 400
+     Spacecraft Semi-Major Axis (km): 6778.135
+     Spacecraft Eccentricity (0-1): 0
+     Spacecraft Inclination (deg): 51.6
+     Spacecraft Use Random ArgOfPerigee: True  (Ignore next line)
+     Spacecraft Arg. Of Perigee (deg): 0
+     Spacecraft Use Random RAAN: True  (Ignore next line)
+     Spacecraft RAAN (deg): 0
+     Spacecraft Igloo File: IGLOO_10x10x1.SIG
+     Radar Observation Year: 2042
+     Radar Latitude (deg): 42.62
+     Radar Azimuth (deg): 90
+     Radar Elevation (deg): 75
+     Radar Igloo File: ALT_50.TIG
+
+
+4/13/2021 12:49:35 PM  (ORDEM 3.1) - Project opened 
+  Project Values: 
+     Spacecraft Observation Year: 2042
+     Spacecraft Use Axis Orbit Type: false
+     Spacecraft Perigee (km): 400
+     Spacecraft Apogee (km): 400
+     Spacecraft Semi-Major Axis (km): 6778.135
+     Spacecraft Eccentricity (0-1): 0
+     Spacecraft Inclination (deg): 51.6
+     Spacecraft Use Random ArgOfPerigee: True  (Ignore next line)
+     Spacecraft Arg. Of Perigee (deg): 0
+     Spacecraft Use Random RAAN: True  (Ignore next line)
+     Spacecraft RAAN (deg): 0
+     Spacecraft Igloo File: IGLOO_10x10x1.SIG
+     Radar Observation Year: 2042
+     Radar Latitude (deg): 42.62
+     Radar Azimuth (deg): 90
+     Radar Elevation (deg): 75
+     Radar Igloo File: ALT_50.TIG
+
+

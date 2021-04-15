@@ -1,0 +1,53 @@
+ ====================================================================
+         This is a generic runtime log of operational details.
+         Should an error occur, this may contain information
+         needed to debug, and should be submitted to the
+         appropriate NASA Orbital Debris point of contact.
+ ====================================================================
+ 2021/04/12  14:32:08    ORDEM 3.1.: Start Time
+     ----------begin input file--------------
+     inputfilename=
+ D:\Work\Matlab Scripts\EMAE 356\EMAE-356\ORDEM projects\ORDEM.IN
+     assesstype=    1
+     obsyear=   2042
+     orbit_type=    1
+     orbit_hperi=   400.000000000000     
+     orbit_hapo=   400.000000000000     
+     sc_a=   6778.13500000000     
+     sc_e=  0.000000000000000E+000
+     sc_i=   51.6000000000000     
+     sc_ap=  -1.00000000000000     
+     sc_raan=  -1.00000000000000     
+     fpath_igloo_sc= 
+ C:\Users\reshi\AppData\Local\NASA\ORDEM 3.1\data\IGLOO_10x10x1.SIG
+     sensor_lat=   42.6200000000000     
+     sensor_az=   90.0000000000000     
+     sensor_el=   75.0000000000000     
+     fpath_igloo_tel=
+     ----------end input file--------------
+*
+*
+*
+*
+*
+*
+*
+     Begin spacecraft-mode calculations...
+     SPACECRAFT IGLOO FILE:
+ C:\Users\reshi\AppData\Local\NASA\ORDEM 3.1\data\IGLOO_10x10x1.SIG
+     VERSIONING =      2458936
+     SOBOL7[NSOBOL,NDIM]=           7      131071
+     N_IGELEMS[SC,TEL]=       14122           0
+     N_GEO_POP[MM,ECC,INC]=    220     25     26
+     N_GEO_POP[HPERI,ECC]=     72    287     74
+     N_POPS[LEO,GEO]=   55    3
+     LEO N_DEB[TYPES,SIZES]=    5   11
+     GEO N_DEB[TYPES,SIZES]=    1    3
+     ENTERING SC_CALCS...
+     --> Read        14122  igloo elements.
+     Performing igloo/pop calcs...
+     Igloo/pop calcs complete.
+     Creating plot data files...
+     Plot data files created.
+ 2021/04/12  14:32:57    ORDEM 3.1.: End Time
+

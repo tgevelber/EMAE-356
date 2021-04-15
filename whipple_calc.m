@@ -8,17 +8,21 @@
     - Number of Nextel/Kevlar layers, rounded up for redundency
     - Wall and bumper thickness in cm
     - Critical projectile diameter in cm (vs velocity)
-%}
 
+    This line is to demonstrate that git works
+%}
+clc
 % Projectile parameters
 theta=0; % impact angle (degree)
-d_design=.3; % Design projectile diameter (cm)
+% p_flux=0.05;% #per m2 per year
+% d_design=interp1(a400(:,2),a400(:,1),p_flux)*100; % Design projectile diameter (cm)
+d_design=.05; 
 rho_p= 2.8; % projectille density (g/cm3)
 v=22; % projectile velocity (km/s)
 v_n=v*cosd(theta); % projectile velocity normal to bumper(km/s)
 
 % Wall/Bumper parameters
-s=15; %overall spacing (cm)
+s=10; %overall spacing (cm)
 rho_b= 2.71; % bumper density (g/cm3) Al-6061-T6
 rho_w=2.84; % rear wall density (g/cm3) Al-2219-T87
 sig= 0.145038*390; % rear wall yield stress (ksi) 2219-T87
@@ -44,11 +48,11 @@ m_kev=0.032; m_nex=0.1;
 
 % Critical projectile diameter for design wall/bumper
 % d_crit=stuff_crit(t_w,t_b,rho_w,rho_b,rho_p,2,s,sig,theta,m_nk)
-% d_crit=stuff_crit(0.25,0.1,rho_w,rho_b,rho_p,2,s,sig,theta,m_nk)
+[d_crit,mshield]=stuff_crit(round(t_w,2),round(t_b,2),rho_w,rho_b,rho_p,22,s,sig,theta,m_nk)
 
 vv=1:.1:15;
 for i=1:length(vv)
-    dd(i)=stuff_crit(0.24,0.05,rho_w,rho_b,rho_p,vv(i),s,sig,theta,m_nk);
+    [dd(i),m_shield(i)]=stuff_crit(0.24,0.05,rho_w,rho_b,rho_p,vv(i),s,sig,theta,m_nk);
 %     dd(i)=stuff_crit(.48,.2,2.84,2.713,2.796,vv(i),10.7,sig,theta,0.796);
 %     dd(i)=stuff_crit(0.25,0.1,rho_w,rho_b,rho_p,2,s,sig,theta,m_nk)
 end
@@ -94,7 +98,7 @@ M_p=4/3.*(d/2).^3*pi*rho_p;
 t_b=c_b.*d*rho_p/rho_b;
 t_w=c_w*(c_o*d*rho_p/(t_b*rho_p+m_nk))^1.1*M_p^(1/3)*v_n*cosd(theta)^0.5*1/rho_w*s^-2*(sig/40)^(-.5);
 end
-function d_crit=stuff_crit(t_w,t_b,rho_w,rho_b,rho_p,v_n,s,sig,theta,m_nk)
+function [d_crit,m_shield]=stuff_crit(t_w,t_b,rho_w,rho_b,rho_p,v_n,s,sig,theta,m_nk)
 m_b=rho_b*t_b; m_w=rho_w*t_w;
 m_shield=m_b+m_nk+m_w;
 m_b_total=m_b+m_nk;
@@ -108,11 +112,11 @@ if v>=6.5*cosd(theta)^(-0.75) % High vel impact
     else
         k_h_sw=0.53;
     end
-    fprintf('High velocity impact\n')
+%     fprintf('High velocity impact\n')
     d_crit=k_h_sw*(t_w*rho_w)^(1/3)*rho_p^(-1/3)*(sig/40)^(1/6)*v^(-1/3)*cosd(theta)^(-0.5)*s^(2/3);
 elseif v<=2.6*cosd(theta)^(-0.5)
     k_l_sw=2.35;
-    fprintf('Low Velocity impact\n')
+%     fprintf('Low Velocity impact\n')
     d_crit=k_l_sw*v^(-2/3)*cosd(theta)^(-4/3)*rho_p^(-0.5)*(t_w*(sig/40)^0.5+cL*m_b_total);
 else
     if m_nk>=0.25*m_shield && m_nk<=0.35*m_shield
@@ -123,7 +127,7 @@ else
         k_h_sw=0.281;
     end
     k_l_sw=1.243;
-    fprintf('Intermediate velocity impact\n')
+%     fprintf('Intermediate velocity impact\n')
     d_crit=(k_l_sw*(t_w*(sig/40)^0.5+cL*m_b_total)/(cosd(theta)*rho_p^0.5))*...
         (6.5*cosd(theta)^(-0.75)-v)/(6.5*cosd(theta)^(-0.75)-2.6*cosd(theta)^(-0.5))...
         +...
