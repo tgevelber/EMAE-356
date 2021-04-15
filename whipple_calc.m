@@ -8,8 +8,6 @@
     - Number of Nextel/Kevlar layers, rounded up for redundency
     - Wall and bumper thickness in cm
     - Critical projectile diameter in cm (vs velocity)
-
-    This line is to demonstrate that git works
 %}
 clc
 % Projectile parameters
